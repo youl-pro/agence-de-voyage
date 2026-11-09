@@ -1,0 +1,177 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Travel Agency</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Crete+Round:ital@0;1&family=Merriweather:ital,wght@0,300;0,400;0,700;0,900;1,300;1,400;1,700;1,900&family=Pacifico&family=Playwrite+CO+Guides&family=Yatra+One&display=swap" rel="stylesheet">
+  <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+    <link rel="stylesheet" href="style.css">
+    </head>
+
+    <style>
+    body {
+      background-color: white;
+      color: black;
+      transition: 0.3s;
+    }
+
+    body.nuit {
+      background-color: #121212;
+      color: white;
+    }
+
+    .toggle-btn {
+      position: fixed;
+      top: 1rem;
+      right: 1rem;
+      padding: 0.5rem;
+      background: #333;
+      color: #fff;
+      border: none;
+      cursor: pointer;
+    }
+
+
+
+    </style>
+<body>
+
+
+<!--entête-->
+<header>
+    <!--le div utiliser pour le contenu "Wrapper"-->
+    <div class="wrapper">
+        <!--les contenus du header--> 
+        <h1> Travel Agency<span class="orange">.</span></h1> 
+         
+        <nav>
+          <ul>
+             <li><a href="#main-image">Accueil</a></li>
+            <li><a href="#posibilities">Destination</a></li>
+            <li> <a href="#steps">Circuits</a></li>
+            <li><a href="#Contact ">Contacts</a></li>
+          </ul>
+        </nav>
+    
+    </div>
+</header> 
+
+       <!--section1-->   
+  
+<section id="main-image">
+ <div class="wrapper" >
+  <h2>organiser votre<br> <strong>voyage sur mesure</strong></h2>
+
+<a href="#" class="button-1"> par ici </a>
+</div>
+</section>
+ <!--section2-->   
+
+<section id="steps">
+  <div class="wrapper">
+  <ul> 
+    <li id="step-1">
+        <h4>planifier</h4>
+        <p> Prenez le temps de rêver, nous nous chargeons de tout planifier.
+           .</p>
+    </li>
+    <li id="step-2">
+        <h4>organiser</h4>
+        <p> cChaque détail compte pour créer un séjour inoubliable. 
+            .</p>
+    </li>
+
+    <li id="step-3">
+        <h4>voyager</h4>
+        <p> Laissez-vous porter par l’envie de découvrir
+             de nouveaux horizons. 
+           s</p>
+    </li>
+    <div class="clear" ></div>
+       
+  </ul>
+
+
+</div>
+</section>
+
+ <!--section3-->   
+<section id="posibilities">
+  <div class="wrapper">
+
+    <article  style="background: url(images/article-image-1.jpg)">
+      <div class="overlay" >
+        <h4>Partez en famille</h4>
+        <p><small>Offrez le meilleur à ceux que vous aimez et partagez des moments fabuleux !</small></p>
+        <a href="#" class="button-2">plus d'infos</a>
+      </div>
+    </article>
+
+    <article  style="background: url(images/article-image-2.jpg)">
+      <div class="overlay">
+        <h4>Envie de s'évader</h4>
+        <p><small>Parfois un peu d'évasion serait la bienvenue et ferait le plus grand bien !</small></p>
+        <a href="#" class="button-2">plus d'infos</a>
+      </div>
+    </article>
+
+    <div class="clear"></div>
+  </div>
+</section>
+
+
+<!--section4-->   
+<section id="Contact">
+<div class="wrapper">
+ <h3>contactez-nous</h3>
+ <p>
+Chez Travel Agency nous savons que voyager est une aventure humaine mais également un engagement 
+financier important pour vous. C'est pourquoi nous mettons un point d'honneur à prendre en compte chacune de vos attentes
+pour vous aider dans la préparation de votre séjour, circuit ou voyage sur mesure.</p>
+<form id="monFormulaire" action="">
+<label for="name">Nom </label>
+<input type="text" name="name" id="nom"  placeholder="votre nom"  > <!--je pourrais mettre required pour aviser l'utilisateur le case vide-->
+
+<label for="email" >Email </label>
+<input type="text" name="email" id="email"  placeholder="votre email">
+<input type="submit" value="ok" class="button-3">
+</form>
+</div>
+</section>
+
+<!--le footer "pied du site"-->
+<footer>
+<section id=" footer">
+ <div class="wrapper">
+    <h1> Travel Agency<span class="orange">.</span></h1> 
+    <div class="Copyright">Copyright © Tous droits réservés.</div>
+ </div>
+</section>
+</footer>
+
+<script>
+$(document).ready(function() {
+  $('#monFormulaire').on('submit', function(e) {
+    var nom = $('#nom').val().trim();
+    var email = $('#email').val().trim();
+
+    if (nom === '' || email === '') {
+      e.preventDefault(); // Empêche l'envoi du formulaire
+      alert('Veuillez remplir tous les champs requis : nom et email.');
+    }
+  });
+});
+
+
+    function toggleNuit() {
+      document.body.classList.toggle('nuit');
+    }
+
+
+</script>
+
+</body>
+</html>
